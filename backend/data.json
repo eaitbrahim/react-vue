@@ -1,0 +1,602 @@
+[
+    {
+      "SensorId": "S001",
+      "SensorName": "TemperatureSensor1",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -10,
+        "max": 50
+      },
+      "ReadingDateTime": "2024-06-06T08:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 90
+    },
+    {
+      "SensorId": "S002",
+      "SensorName": "TemperatureSensor2",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": 0,
+        "max": 100
+      },
+      "ReadingDateTime": "2024-06-06T08:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 85
+    },
+    {
+      "SensorId": "S003",
+      "SensorName": "TemperatureSensor3",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -5,
+        "max": 45
+      },
+      "ReadingDateTime": "2024-06-06T08:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 92
+    },
+    {
+      "SensorId": "S004",
+      "SensorName": "TemperatureSensor4",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T08:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 88
+    },
+    {
+      "SensorId": "S005",
+      "SensorName": "TemperatureSensor5",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T09:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 95
+    },
+    {
+      "SensorId": "S006",
+      "SensorName": "TemperatureSensor6",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -15,
+        "max": 55
+      },
+      "ReadingDateTime": "2024-06-06T09:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 91
+    },
+    {
+      "SensorId": "S007",
+      "SensorName": "TemperatureSensor7",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -5,
+        "max": 60
+      },
+      "ReadingDateTime": "2024-06-06T09:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 87
+    },
+    {
+      "SensorId": "S008",
+      "SensorName": "TemperatureSensor8",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -8,
+        "max": 48
+      },
+      "ReadingDateTime": "2024-06-06T09:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 93
+    },
+    {
+      "SensorId": "S009",
+      "SensorName": "TemperatureSensor9",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T10:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 89
+    },
+    {
+      "SensorId": "S010",
+      "SensorName": "TemperatureSensor10",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T10:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 96
+    },
+    {
+      "SensorId": "S011",
+      "SensorName": "TemperatureSensor11",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -12,
+        "max": 52
+      },
+      "ReadingDateTime": "2024-06-06T10:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 88
+    },
+    {
+      "SensorId": "S012",
+      "SensorName": "TemperatureSensor12",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -2,
+        "max": 58
+      },
+      "ReadingDateTime": "2024-06-06T10:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 94
+    },
+    {
+      "SensorId": "S013",
+      "SensorName": "TemperatureSensor13",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -6,
+        "max": 47
+      },
+      "ReadingDateTime": "2024-06-06T11:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 90
+    },
+    {
+      "SensorId": "S014",
+      "SensorName": "TemperatureSensor14",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T11:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 86
+    },
+    {
+      "SensorId": "S015",
+      "SensorName": "TemperatureSensor15",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T11:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 97
+    },
+    {
+      "SensorId": "S016",
+      "SensorName": "TemperatureSensor16",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -14,
+        "max": 53
+      },
+      "ReadingDateTime": "2024-06-06T11:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 92
+    },
+    {
+      "SensorId": "S017",
+      "SensorName": "TemperatureSensor17",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -3,
+        "max": 57
+      },
+      "ReadingDateTime": "2024-06-06T12:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 89
+    },
+    {
+      "SensorId": "S018",
+      "SensorName": "TemperatureSensor18",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -7,
+        "max": 46
+      },
+      "ReadingDateTime": "2024-06-06T12:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 91
+    },
+    {
+      "SensorId": "S019",
+      "SensorName": "TemperatureSensor19",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T12:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 87
+    },
+    {
+      "SensorId": "S020",
+      "SensorName": "TemperatureSensor20",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T12:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 98
+    },
+    {
+      "SensorId": "S021",
+      "SensorName": "TemperatureSensor21",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -13,
+        "max": 54
+      },
+      "ReadingDateTime": "2024-06-06T13:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 93
+    },
+    {
+      "SensorId": "S022",
+      "SensorName": "TemperatureSensor22",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -4,
+        "max": 59
+      },
+      "ReadingDateTime": "2024-06-06T13:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 90
+    },
+    {
+      "SensorId": "S023",
+      "SensorName": "TemperatureSensor23",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -9,
+        "max": 49
+      },
+      "ReadingDateTime": "2024-06-06T13:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 94
+    },
+    {
+      "SensorId": "S024",
+      "SensorName": "TemperatureSensor24",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T13:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 88
+    },
+    {
+      "SensorId": "S025",
+      "SensorName": "TemperatureSensor25",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T14:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 99
+    },
+    {
+      "SensorId": "S026",
+      "SensorName": "TemperatureSensor26",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -16,
+        "max": 56
+      },
+      "ReadingDateTime": "2024-06-06T14:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 95
+    },
+    {
+      "SensorId": "S027",
+      "SensorName": "TemperatureSensor27",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -1,
+        "max": 61
+      },
+      "ReadingDateTime": "2024-06-06T14:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 91
+    },
+    {
+      "SensorId": "S028",
+      "SensorName": "TemperatureSensor28",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -4,
+        "max": 50
+      },
+      "ReadingDateTime": "2024-06-06T14:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 96
+    },
+    {
+      "SensorId": "S029",
+      "SensorName": "TemperatureSensor29",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T15:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 89
+    },
+    {
+      "SensorId": "S030",
+      "SensorName": "TemperatureSensor30",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T15:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 100
+    },
+    {
+      "SensorId": "S031",
+      "SensorName": "TemperatureSensor31",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -11,
+        "max": 51
+      },
+      "ReadingDateTime": "2024-06-06T15:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 96
+    },
+    {
+      "SensorId": "S032",
+      "SensorName": "TemperatureSensor32",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -6,
+        "max": 56
+      },
+      "ReadingDateTime": "2024-06-06T15:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 92
+    },
+    {
+      "SensorId": "S033",
+      "SensorName": "TemperatureSensor33",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -3,
+        "max": 48
+      },
+      "ReadingDateTime": "2024-06-06T16:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 97
+    },
+    {
+      "SensorId": "S034",
+      "SensorName": "TemperatureSensor34",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T16:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 90
+    },
+    {
+      "SensorId": "S035",
+      "SensorName": "TemperatureSensor35",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T16:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 98
+    },
+    {
+      "SensorId": "S036",
+      "SensorName": "TemperatureSensor36",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -17,
+        "max": 57
+      },
+      "ReadingDateTime": "2024-06-06T16:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 94
+    },
+    {
+      "SensorId": "S037",
+      "SensorName": "TemperatureSensor37",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -7,
+        "max": 62
+      },
+      "ReadingDateTime": "2024-06-06T17:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 93
+    },
+    {
+      "SensorId": "S038",
+      "SensorName": "TemperatureSensor38",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -2,
+        "max": 51
+      },
+      "ReadingDateTime": "2024-06-06T17:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 95
+    },
+    {
+      "SensorId": "S039",
+      "SensorName": "TemperatureSensor39",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T17:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 91
+    },
+    {
+      "SensorId": "S040",
+      "SensorName": "TemperatureSensor40",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T17:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 99
+    },
+    {
+      "SensorId": "S041",
+      "SensorName": "TemperatureSensor41",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -18,
+        "max": 58
+      },
+      "ReadingDateTime": "2024-06-06T18:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 96
+    },
+    {
+      "SensorId": "S042",
+      "SensorName": "TemperatureSensor42",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -8,
+        "max": 63
+      },
+      "ReadingDateTime": "2024-06-06T18:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 92
+    },
+    {
+      "SensorId": "S043",
+      "SensorName": "TemperatureSensor43",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": -1,
+        "max": 52
+      },
+      "ReadingDateTime": "2024-06-06T18:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 97
+    },
+    {
+      "SensorId": "S044",
+      "SensorName": "TemperatureSensor44",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T18:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 93
+    },
+    {
+      "SensorId": "S045",
+      "SensorName": "TemperatureSensor45",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T19:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 100
+    },
+    {
+      "SensorId": "S046",
+      "SensorName": "TemperatureSensor46",
+      "SensorType": "lumity FX 100",
+      "AlarmRange": {
+        "min": -19,
+        "max": 59
+      },
+      "ReadingDateTime": "2024-06-06T19:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 95
+    },
+    {
+      "SensorId": "S047",
+      "SensorName": "TemperatureSensor47",
+      "SensorType": "lumity FX 200",
+      "AlarmRange": {
+        "min": -9,
+        "max": 64
+      },
+      "ReadingDateTime": "2024-06-06T19:30:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 94
+    },
+    {
+      "SensorId": "S048",
+      "SensorName": "TemperatureSensor48",
+      "SensorType": "temp and humidity",
+      "AlarmRange": {
+        "min": 0,
+        "max": 53
+      },
+      "ReadingDateTime": "2024-06-06T19:45:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 96
+    },
+    {
+      "SensorId": "S049",
+      "SensorName": "TemperatureSensor49",
+      "SensorType": "digital",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1
+      },
+      "ReadingDateTime": "2024-06-06T20:00:00",
+      "Probe": "Probe1",
+      "BatteryLevel": 95
+    },
+    {
+      "SensorId": "S050",
+      "SensorName": "TemperatureSensor50",
+      "SensorType": "analog",
+      "AlarmRange": {
+        "min": 0,
+        "max": 1023
+      },
+      "ReadingDateTime": "2024-06-06T20:15:00",
+      "Probe": "Probe2",
+      "BatteryLevel": 97
+    }
+  ]
