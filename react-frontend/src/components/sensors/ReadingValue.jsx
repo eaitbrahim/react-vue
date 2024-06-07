@@ -2,8 +2,8 @@ import React from 'react';
 import classes from './ReadingValue.module.css';
 
 const ReadingValue = ({ value, min, max }) => {
-  let backgroundColor;
-
+    let backgroundColor;
+    
   if (value < min) {
     backgroundColor = 'blue';
   } else if (value > max) {
@@ -18,7 +18,7 @@ const ReadingValue = ({ value, min, max }) => {
 
   return (
     <span className={classes.ReadingValue} style={style}>
-      {value} ° F
+      {value.toFixed(2)} ° F
     </span>
   );
 };

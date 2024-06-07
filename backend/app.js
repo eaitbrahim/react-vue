@@ -49,7 +49,7 @@ function broadcastRandomData() {
   });
 }
 
-setInterval(broadcastRandomData, 5000);
+setInterval(broadcastRandomData, 15000);
 wss.on('listening', () => {
   console.log('WebSocket server is running on port 8080');
 });

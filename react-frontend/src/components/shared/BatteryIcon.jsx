@@ -19,8 +19,8 @@ const BatteryIcon = ({ level }) => {
 
   const iconStyle = {
     color: percentageColor,
-    fontSize: '36px', // Adjust icon size
-    margin: 'auto', // Center the icon vertically
+    fontSize: '36px',
+    margin: 'auto', 
   };
 
   return (

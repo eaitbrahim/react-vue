@@ -11,6 +11,19 @@ const SensorTiles = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const ws = new WebSocket('ws://localhost:8080'); 
+
+    ws.onmessage = (event) => {
+      const newData = JSON.parse(event.data);
+      updateSensorData(newData);
+    };
+
+    return () => {
+      ws.close();
+    };
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
@@ -26,6 +39,19 @@ const SensorTiles = () => {
     };
     fetchData();
   }, [currentPage]);
+
+  const updateSensorData = (newData) => {
+    setSensorData(prevData => {
+      const index = prevData.findIndex(sensor => sensor.SensorId === newData.SensorId);
+      if (index !== -1) {
+        const updatedSensorData = [...prevData];
+        updatedSensorData[index] = { ...updatedSensorData[index], ...newData };
+        return updatedSensorData;
+      }
+      
+      return prevData;
+    });
+  };
 
   const handlePrevPage = () => {
     setCurrentPage(currentPage - 1);
