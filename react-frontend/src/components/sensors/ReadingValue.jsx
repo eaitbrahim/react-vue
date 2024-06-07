@@ -18,7 +18,7 @@ const ReadingValue = ({ value, min, max }) => {
 
   return (
     <span className={classes.ReadingValue} style={style}>
-      {value.toFixed(2)} ° F
+      {value && value.toFixed(2)} ° F
     </span>
   );
 };
