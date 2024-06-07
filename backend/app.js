@@ -1,16 +1,21 @@
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors');
 const app = express();
 
-const temperatureData = JSON.parse(fs.readFileSync('./data.json'));
+const corsOptions = {
+  origin: '*',
+};
+const sensorData = JSON.parse(fs.readFileSync('./data.json'));
+app.use(cors(corsOptions));
 
-app.get('/temperature', (req, res) => {
+app.get('/sensor', (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const pageSize = 10;
   const startIndex = (page - 1) * pageSize;
   const endIndex = startIndex + pageSize;
 
-  const dataBatch = temperatureData.slice(startIndex, endIndex);
+  const dataBatch = sensorData.slice(startIndex, endIndex);
 
   res.json(dataBatch);
 });
