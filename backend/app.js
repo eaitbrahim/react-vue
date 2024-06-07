@@ -1,3 +1,4 @@
+const WebSocket = require('ws');
 const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
@@ -28,4 +29,27 @@ app.get('/sensor', (req, res) => {
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+});
+
+const wss = new WebSocket.Server({ port: 8080 });
+function generateRandomData(sensorId) {
+  const reading = Math.random() * 200 - 100;
+  const batteryLevel = Math.floor(Math.random() * 101); 
+  return { SensorId: sensorId, reading, batteryLevel };
+}
+
+function broadcastRandomData() {
+  sensorData.forEach(sensor => {
+    const data = generateRandomData(sensor.SensorId);
+    wss.clients.forEach(client => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify(data));
+      }
+    });
+  });
+}
+
+setInterval(broadcastRandomData, 5000);
+wss.on('listening', () => {
+  console.log('WebSocket server is running on port 8080');
 });
