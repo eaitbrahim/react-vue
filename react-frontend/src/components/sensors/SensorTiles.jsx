@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Tile from './Tile';
+import classes from './SensorTiles.module.css';
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 12;
 
 const SensorTiles = () => {
   const [sensorData, setSensorData] = useState([]);
@@ -33,7 +34,7 @@ const SensorTiles = () => {
   };
 
   return (
-    <div>
+    <div className={classes.SensorTiles}>
         {loading ? (
         <div>Loading...</div>
         ) : (

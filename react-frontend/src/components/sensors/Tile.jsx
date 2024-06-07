@@ -1,7 +1,8 @@
 import React from 'react';
+import classes from './Tile.module.css';
 
 const Tile = ({ data }) => (
-  <div className="tile">
+  <div className={classes.Tile}>
     <h2>{data.SensorName}</h2>
     <p>Sensor Type: {data.SensorType}</p>
     <p>Reading: {data.ReadingDateTime}</p>

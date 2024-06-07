@@ -11,7 +11,7 @@ app.use(cors(corsOptions));
 
 app.get('/sensor', (req, res) => {
   const page = parseInt(req.query.page) || 1;
-  const pageSize = 10;
+  const pageSize = 12;
   const startIndex = (page - 1) * pageSize;
   const endIndex = startIndex + pageSize;
 

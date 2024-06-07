@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.Header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.TileContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
