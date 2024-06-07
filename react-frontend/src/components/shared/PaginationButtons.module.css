@@ -1,0 +1,18 @@
+.PaginationButtons {
+    margin-top: 20px;
+  }
+  
+  .PaginationButton {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .PaginationButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
