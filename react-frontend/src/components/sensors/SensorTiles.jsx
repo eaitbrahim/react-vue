@@ -4,8 +4,6 @@ import Tile from './Tile';
 import PaginationButtons from '../shared/PaginationButtons';
 import classes from './SensorTiles.module.css';
 
-const PAGE_SIZE = 12;
-
 const SensorTiles = () => {
   const [sensorData, setSensorData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
