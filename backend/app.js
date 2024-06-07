@@ -15,7 +15,12 @@ app.get('/sensor', (req, res) => {
   const startIndex = (page - 1) * pageSize;
   const endIndex = startIndex + pageSize;
 
+  const totalRecords = sensorData.length;
+  const totalPages = Math.ceil(totalRecords / pageSize);
+
   const dataBatch = sensorData.slice(startIndex, endIndex);
+
+  res.set('x-total-pages', totalPages);
 
   res.json(dataBatch);
 });

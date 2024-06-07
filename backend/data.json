@@ -10,7 +10,7 @@
       "Reading": 35,
       "ReadingDateTime": "2024-06-06T08:00:00",
       "Probe": 1,
-      "BatteryLevel": 90
+      "BatteryLevel": 10
     },
     {
       "SensorId": "S002",
@@ -23,7 +23,7 @@
       "Reading": 35,
       "ReadingDateTime": "2024-06-06T08:15:00",
       "Probe": 2,
-      "BatteryLevel": 85
+      "BatteryLevel": 55
     },
     {
       "SensorId": "S003",

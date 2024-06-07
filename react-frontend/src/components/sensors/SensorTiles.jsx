@@ -16,7 +16,8 @@ const SensorTiles = () => {
         setLoading(true);
         const response = await axios.get(`http://localhost:3000/sensor?page=${currentPage}`);
         setSensorData(response.data);
-        setTotalPages(response.headers['x-total-pages']);
+        const totalPagesHeader = response.headers['x-total-pages'];
+        setTotalPages(totalPagesHeader);
         setLoading(false); 
       } catch (error) {
         console.error('Error fetching sensor data:', error);
@@ -34,6 +35,8 @@ const SensorTiles = () => {
     setCurrentPage(currentPage + 1);
   };
 
+  const isNextDisabled = currentPage === totalPages;
+
   return (
     <div className={classes.SensorTiles}>
         {loading ? (
@@ -49,6 +52,7 @@ const SensorTiles = () => {
                 totalPages={totalPages}
                 onPrevPage={handlePrevPage}
                 onNextPage={handleNextPage}
+                isNextDisabled={isNextDisabled}
               />
             </div>
         </>
