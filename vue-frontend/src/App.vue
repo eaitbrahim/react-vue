@@ -1,30 +1,31 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="App">
+    <header class="Header">
+      <h1>All Sensor</h1>
+    </header>
+    <SensorTiles />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
+<script>
+import SensorTiles from './components/sensors/SensorTiles.vue';
+
+export default {
+  name: 'App',
+  components: {
+    SensorTiles, // Register SensorTiles component
+  },
+};
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.App {
+  text-align: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.Header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
 }
 </style>
