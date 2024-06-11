@@ -1,0 +1,23 @@
+.logout {
+    margin-left: 10px; 
+  }
+  
+  .button {
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .icon {
+    margin-right: 5px; 
+    color: green;
+  }
