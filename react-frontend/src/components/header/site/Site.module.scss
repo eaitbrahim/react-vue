@@ -1,4 +1,7 @@
 .site {
     display: flex;
     justify-content: flex-end;
+    select {
+        width: 250px;
+    } 
 }
