@@ -11,21 +11,15 @@ const BatteryIcon = ({ level }) => {
     percentageColor = 'green';
   } else if (level >= 50) {
     Icon = FaBatteryHalf;
-    percentageColor = 'orange';
+    percentageColor = 'darkOrange';
   } else {
     Icon = FaBatteryEmpty;
     percentageColor = 'red';
   }
 
-  const iconStyle = {
-    color: percentageColor,
-    fontSize: '36px',
-    margin: 'auto', 
-  };
-
   return (
     <div className={classes.BatteryIcon}>
-      <Icon style={iconStyle} />
+      <Icon className={classes.icon} style={{color: percentageColor}} />
       <span className={classes.Percentage}>{level}%</span>
     </div>
   );

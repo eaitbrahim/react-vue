@@ -33,7 +33,10 @@ app.listen(PORT, () => {
 
 const wss = new WebSocket.Server({ port: 8080 });
 function generateRandomData(sensorId) {
-  const reading = Math.random() * 200 - 100;
+  const randomNumber = Math.floor(Math.random() * (201)) - 100;
+  const randomChance = Math.floor(Math.random() * 3);
+  // If the random number is 0, return "#", otherwise return the randomNumber
+  const reading = randomChance === 0 ? '#' : randomNumber;
   const batteryLevel = Math.floor(Math.random() * 101); 
   return { SensorId: sensorId, reading, batteryLevel, readingDateTime: Date.now() };
 }

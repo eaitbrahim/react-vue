@@ -1,24 +1,28 @@
 import React from 'react';
 import classes from './ReadingValue.module.css';
 
-const ReadingValue = ({ value, min, max }) => {
-    let backgroundColor;
+const ReadingValue = ({ value, min, max, onBackgroundColorChange }) => {
+  let backgroundColor, color;
     
   if (value < min) {
-    backgroundColor = 'blue';
+    backgroundColor = '#3899ff';//blue
+    color = '#ffffff';
   } else if (value > max) {
-    backgroundColor = 'red';
+    backgroundColor = '#990200';//red
+    color = '#ffffff';
+  } else if(value == '#'){
+    backgroundColor = '#f8a736';// orange
+    color = '#000000';
   } else {
-    backgroundColor = 'green';
+    backgroundColor = '#8cd98c';//green
+    color = '#000000';
   }
 
-  const style = {
-    backgroundColor: backgroundColor,
-  };
+  onBackgroundColorChange(backgroundColor, color);
 
   return (
-    <span className={classes.ReadingValue} style={style}>
-      {value && value.toFixed(2)} ° F
+    <span className={classes.ReadingValue}>
+      {value === undefined ? '' : (value === '#' ? 'Probe missing' : `${value.toFixed(2)}° F`)}
     </span>
   );
 };

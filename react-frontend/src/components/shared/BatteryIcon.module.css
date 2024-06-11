@@ -2,10 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
     padding: 5px;
     border-radius: 5px;
   }
+
+  .icon {
+    font-size: 36px;
+    margin: auto; 
+    transform: rotate(-90deg);
+  };
   
   .BatteryIcon span.Percentage {
     font-size: 14px;
