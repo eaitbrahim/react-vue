@@ -1,14 +1,10 @@
 import React from 'react';
-import classes from './App.module.css';
-import SensorTiles from './components/sensors/SensorTiles';
+import classes from './App.module.scss';
+import Header from './components/header/Header';
 
 const App = () => (
-  <div className={classes.App}>
-    <header className={classes.Header}>
-      <h1>All Sensor using React</h1>
-    </header>
-
-    <SensorTiles />
+  <div className={classes.app}>
+    <Header />
   </div>
 );
 
