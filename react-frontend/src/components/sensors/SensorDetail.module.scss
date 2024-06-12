@@ -1,0 +1,12 @@
+.SensorDetail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .item {
+    border: 1px solid #4974A3; 
+    padding: 20px;
+  }

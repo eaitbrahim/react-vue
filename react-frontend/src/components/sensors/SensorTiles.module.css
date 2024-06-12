@@ -1,6 +1,5 @@
 .SensorTiles {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     justify-items: center; 
     margin-top: 20px;
@@ -10,4 +9,5 @@
     grid-column: 1 / -1; 
     justify-self: center;
     margin-top: 20px;
+
 }

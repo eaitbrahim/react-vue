@@ -3,13 +3,17 @@ import classes from './App.module.scss';
 import Header from './components/header/Header';
 import Banner from './components/banner/Banner';
 import Main from './components/Main';
+import { TileModeProvider } from './context/TileModeContext';
 
 const App = () => (
-  <div className={classes.app}>
-    <Header />
-    <Banner />
-    <Main/>
-  </div>
+  
+    <TileModeProvider>  
+        <div className={classes.app}>
+          <Header />
+          <Banner />
+          <Main/>
+        </div>
+    </TileModeProvider>
 );
 
 export default App;

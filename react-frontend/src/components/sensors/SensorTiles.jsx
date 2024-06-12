@@ -3,8 +3,10 @@ import axios from 'axios';
 import Tile from './Tile';
 import PaginationButtons from '../shared/PaginationButtons';
 import classes from './SensorTiles.module.css';
+import { useTileMode } from '../../context/TileModeContext';
 
 const SensorTiles = () => {
+  const { expanded } = useTileMode();
   const [sensorData, setSensorData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -62,15 +64,17 @@ const SensorTiles = () => {
   };
 
   const isNextDisabled = currentPage === totalPages;
+  const styleExpanded = {gridTemplateColumns: 'repeat(4, 1fr)'};
+  const styleCollapsed = {gridTemplateColumns: 'repeat(10, 1fr)'};
 
   return (
-    <div className={classes.SensorTiles}>
+    <div className={classes.SensorTiles} style={expanded ? styleExpanded : styleCollapsed}>
         {loading ? (
         <div>Loading...</div>
         ) : (
         <>
             {sensorData.map((data, index) => (
-            <Tile key={index} data={data} />
+              <Tile key={index} data={data} />
             ))}
             <div className={classes.PaginationButtonsWrapper}>
               <PaginationButtons
