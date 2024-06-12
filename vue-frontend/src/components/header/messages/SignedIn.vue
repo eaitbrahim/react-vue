@@ -1,13 +1,4 @@
 <script>
-  import { defineComponent } from 'vue';
-  
-  export default defineComponent({
-    setup() {
-      return {
-        classes,
-      };
-    },
-  });
 </script>
 
 <template>

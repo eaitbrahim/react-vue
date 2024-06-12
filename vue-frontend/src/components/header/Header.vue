@@ -14,11 +14,6 @@
       SignedIn,
       RouterLink,
     },
-    setup() {
-      return {
-        classes,
-      };
-    },
   });
 </script>
   
