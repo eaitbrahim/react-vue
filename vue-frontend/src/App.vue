@@ -1,31 +1,47 @@
-<template>
-  <div class="App">
-    <header class="Header">
-      <h1>All Sensor</h1>
-    </header>
-    <SensorTiles />
-  </div>
-</template>
-
-<script>
-import SensorTiles from './components/sensors/SensorTiles.vue';
-
-export default {
-  name: 'App',
-  components: {
-    SensorTiles, // Register SensorTiles component
-  },
-};
+<script setup>
+  import { createRouter, createWebHistory } from 'vue-router';
+  import Header from './components/header/Header.vue';
+  import Banner from './components/banner/Banner.vue';
+  import Main from './components/Main.vue';
+  import TileModeProvider from './store';
+  
+  const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+      // Define your routes here
+    ]
+  });
+  
+  export default {
+    components: {
+      Header,
+      Banner,
+      Main
+    },
+    setup() {
+      // Provide TileModeProvider
+      provide('TileModeProvider', TileModeProvider);
+  
+      return { classes };
+    }
+  };
 </script>
-
-<style scoped>
-.App {
-  text-align: center;
-}
-
-.Header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
-}
-</style>
+  
+<template>
+    <Router>
+      <TileModeProvider>
+        <div class="app">
+          <Header />
+          <Banner />
+          <Main />
+        </div>
+      </TileModeProvider>
+    </Router>
+  </template>
+  
+  
+  <style scoped>
+  .app {
+    background-color: white;
+  }
+  </style>
