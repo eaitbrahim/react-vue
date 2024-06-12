@@ -17,4 +17,9 @@
     transform: scale(1.05);
     cursor: pointer;
   }
+
+  .link {
+    text-decoration: none; 
+    color: inherit; 
+  }
   

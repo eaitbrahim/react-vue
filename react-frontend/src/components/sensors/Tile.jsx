@@ -17,7 +17,7 @@ const Tile = ({ data } ) => {
 
   return (
   <div className={classes.Tile} style={{ backgroundColor: backgroundColor, color }}>
-    <Link to={`/sensor/${data.SensorId}`}>
+    <Link to={`/sensor/${data.SensorId}`} className={classes.link}>
       <h2>{data.SensorName}</h2>
       <ReadingValue 
               value={data.reading} 

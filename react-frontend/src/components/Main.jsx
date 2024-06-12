@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import SlideMenu from './menu/SlideMenu';
 import SensorTiles from './sensors/SensorTiles';
 import SensorDetail from './sensors/SensorDetail';
@@ -9,12 +9,10 @@ function Main() {
   return (
     <div className={styles.container}>
         <SlideMenu />
-        <Router>
-            <Routes>
-                <Route path="/" element={<SensorTiles />} />
-                <Route path="/sensor/:id" element={<SensorDetail />} />
-            </Routes>
-        </Router>
+        <Routes>
+            <Route path="/" element={<SensorTiles />} />
+            <Route path="/sensor/:id" element={<SensorDetail />} />
+        </Routes>
     </div>
   );
 }
