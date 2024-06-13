@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style scoped module>
+<style scoped >
 .banner {
     background-color: #4974A3;
     padding: 10px 20px;
@@ -27,6 +27,6 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
 .actions {
-display: flex;
+    display: flex;
 }
 </style>

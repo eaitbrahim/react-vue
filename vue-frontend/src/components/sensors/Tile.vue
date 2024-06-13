@@ -33,7 +33,7 @@
 </script>
   
 <template>
-    <div :class="classes.Tile" :style="{ backgroundColor, color }">
+    <div class="Tile" :style="{ backgroundColor, color }">
       <router-link :to="`/sensor/${data.SensorId}`" class="link">
         <h2>{{ data.SensorName }}</h2>
         <ReadingValue

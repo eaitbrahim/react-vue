@@ -1,42 +1,42 @@
+<script>
+import { FaBatteryFull, FaBatteryHalf, FaBatteryEmpty } from 'react-icons/fa';
+
+export default {
+  props: {
+    level: {
+      type: Number,
+      required: true,
+    },
+  },
+  computed: {
+    icon() {
+      if (this.level >= 75) {
+        return FaBatteryFull;
+      } else if (this.level >= 50) {
+        return FaBatteryHalf;
+      } else {
+        return FaBatteryEmpty;
+      }
+    },
+    percentageColor() {
+      if (this.level >= 75) {
+        return 'green';
+      } else if (this.level >= 50) {
+        return 'darkOrange';
+      } else {
+        return 'red';
+      }
+    },
+  },
+};
+</script>
+
 <template>
     <div class="BatteryIcon">
       <component :is="icon" class="icon" :style="{ color: percentageColor }" />
       <span class="Percentage">{{ level }}%</span>
     </div>
-  </template>
-  
-  <script>
-  import { FaBatteryFull, FaBatteryHalf, FaBatteryEmpty } from 'react-icons/fa';
-  
-  export default {
-    props: {
-      level: {
-        type: Number,
-        required: true,
-      },
-    },
-    computed: {
-      icon() {
-        if (this.level >= 75) {
-          return FaBatteryFull;
-        } else if (this.level >= 50) {
-          return FaBatteryHalf;
-        } else {
-          return FaBatteryEmpty;
-        }
-      },
-      percentageColor() {
-        if (this.level >= 75) {
-          return 'green';
-        } else if (this.level >= 50) {
-          return 'darkOrange';
-        } else {
-          return 'red';
-        }
-      },
-    },
-  };
-  </script>
+</template>
   
   <style scoped>
   .BatteryIcon {
