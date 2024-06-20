@@ -1,6 +1,7 @@
 <script setup>
-    import { ref, computed } from 'vue';
+    import { computed } from 'vue';
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+    import { faBatteryFull, faBatteryHalf, faBatteryEmpty } from '@fortawesome/free-solid-svg-icons';
 
     const props = defineProps({
         level: {
@@ -9,25 +10,30 @@
         }
     });
 
-    let Icon;
-    let percentageColor;
-
+    const icon = computed(() => {
     if (props.level >= 75) {
-        Icon = ['fas', 'battery-full'];
-        percentageColor = 'green';
+        return faBatteryFull;
     } else if (props.level >= 50) {
-        Icon = ['fas', 'battery-half'];
-        percentageColor = 'darkOrange';
+        return faBatteryHalf;
     } else {
-        Icon = ['fas', 'battery-empty'];
-        percentageColor = 'red';
+        return faBatteryEmpty;
     }
+});
 
+    const percentageColor = computed(() => {
+    if (props.level >= 75) {
+        return 'green';
+    } else if (props.level >= 50) {
+        return 'darkOrange';
+    } else {
+        return 'red';
+    }
+    });
 </script>
 
 <template>
     <div class="BatteryIcon">
-        <component :is="Icon" class="icon" :style="{ color: percentageColor }" />
+        <font-awesome-icon :icon="icon" :style="{ color: percentageColor }" class="icon" />
         <span class="Percentage">{{ level }}%</span>
     </div>
 </template>
