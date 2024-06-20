@@ -2,7 +2,7 @@
     import { ref, watch } from 'vue';
 
     const props = defineProps({
-    value: Object,
+    value: [Number, String],
     min: Number,
     max: Number,
     });
