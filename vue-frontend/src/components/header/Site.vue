@@ -1,18 +1,23 @@
-<script setup>
-import Header from './components/header/Header.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+
 </script>
 
 <template>
-  <div className={classes.app}>
-    <Header />
-    <Banner />
-    <Main/>
-  </div>
+  <div class="site">
+      <select>
+        <option>Site 1</option>
+        <option>Site 2</option>
+        <option>Site 3</option>
+      </select>
+    </div>
 </template>
 
 <style scoped>
-.app {
-  background-color: white;
+.site {
+    display: flex;
+    justify-content: flex-end;
+    select {
+        width: 250px;
+    } 
 }
 </style>
