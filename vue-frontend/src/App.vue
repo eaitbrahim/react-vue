@@ -1,12 +1,13 @@
 <script setup>
 import Header from './components/header/Header.vue';
 import Banner from './components/banner/Banner.vue';
+import Body from './components/Body.vue';
 </script>
 
 <template>
     <Header />
     <Banner />
-    <!-- <Main/> -->
+    <Body/>
 </template>
 
 <style>

@@ -1,36 +1,16 @@
+<script setup>
+import SlideMenu from './menu/SlideMenu.vue';
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
+    <div class="container">
+        <SlideMenu />
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String,
-    },
-  };
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-  .home {
-    text-align: center;
+<style scoped>
+ .container {
+    display: flex;
   }
-  
-  .robot {
-    height: 500px;
-  }
-  
-  .get-started {
-    padding-top: 20px;
-    font-size: 32px;
-  }
-  </style>
+</style>
   

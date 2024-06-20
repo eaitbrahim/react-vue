@@ -1,6 +1,5 @@
 <script setup>
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-    import { faSearch } from '@fortawesome/free-solid-svg-icons';
 </script>
 
 <template>
