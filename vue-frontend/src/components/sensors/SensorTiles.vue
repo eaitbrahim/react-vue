@@ -1,17 +1,19 @@
 <script setup>
-    import { ref, reactive, onMounted, onUnmounted } from 'vue';
+    import { ref, reactive, onMounted, onUnmounted, computed } from 'vue';
     import axios from 'axios';
     import Tile from './Tile.vue';
     import PaginationButtons from '../shared/PaginationButtons.vue';
+    import { useTileModeStore } from '../../stores/tileModeStore';
     
-    const  expanded  = true;//useTileMode();
+    const  { expanded }  = useTileModeStore();
     const sensorData = ref([]);
     const currentPage = ref(1);
     const totalPages = ref(1);
     const loading = ref(true);
 
-    const styleExpanded = ref({ gridTemplateColumns: 'repeat(4, 1fr)' });
-    const styleCollapsed = ref({ gridTemplateColumns: 'repeat(10, 1fr)' });
+    const styleExpanded = { gridTemplateColumns: 'repeat(4, 1fr)' };
+    const styleCollapsed = { gridTemplateColumns: 'repeat(10, 1fr)' };
+    const gridStyle = computed(() => (expanded.value ? styleExpanded : styleCollapsed))
 
     const fetchData = async () => {
         try {
@@ -27,17 +29,30 @@
     };
 
     const handlePrevPage = () => {
-        currentPage.value -= 1;
+        if (currentPage.value > 1) {
+            currentPage.value -= 1;
+            fetchData();
+        }
     };
 
     const handleNextPage = () => {
-        currentPage.value += 1;
+        if (currentPage.value < totalPages.value) {
+            currentPage.value += 1;
+            fetchData();
+        }
+    };
+
+    const updateSensorData = (newData) => {
+        const index = sensorData.value.findIndex(sensor => sensor.SensorId === newData.SensorId);
+        if (index !== -1) {
+            Object.assign(sensorData.value[index], newData);
+        }
     };
 
     const ws = new WebSocket('ws://localhost:8080');
 
-    onMounted(async () => {
-        await fetchData();
+    onMounted(() => {
+        fetchData();
         ws.onmessage = (event) => {
             const newData = JSON.parse(event.data);
             updateSensorData(newData);
@@ -45,20 +60,15 @@
     });
 
     onUnmounted(() => {
-        ws.close();
-    });
-
-    const updateSensorData = (newData) => {
-        const index = sensorData.value.findIndex(sensor => sensor.SensorId === newData.SensorId);
-        if (index !== -1) {
-            sensorData.value[index] = { ...sensorData.value[index], ...newData };
+        if (ws) {
+            ws.close();
         }
-    };
+    });
 
 </script>
 
 <template>
-    <div class="sensorTiles" :style="[expanded ? styleExpanded.value : styleCollapsed.value]">
+    <div class="SensorTiles" :style="gridStyle">
         <template v-if="loading">
             <div>Loading...</div>
         </template>
@@ -72,7 +82,6 @@
                 :totalPages="totalPages"
                 @onPrevPage="handlePrevPage"
                 @onNextPage="handleNextPage"
-                :isNextDisabled="isNextDisabled"
             />
         </div>
         </template>

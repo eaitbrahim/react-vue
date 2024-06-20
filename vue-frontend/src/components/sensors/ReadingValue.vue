@@ -5,9 +5,9 @@
     value: Object,
     min: Number,
     max: Number,
-    onBackgroundColorChange: Function
     });
 
+    const emit = defineEmits(['onBackgroundColorChange']);
     // Reactive variables
     const displayValue = ref('');
 
@@ -37,12 +37,8 @@
             color = '#000000';
         }
 
-        // Call onBackgroundColorChange function from props
-        if (typeof props.onBackgroundColorChange === 'function') {
-          props.onBackgroundColorChange(backgroundColor, color);
-        } else {
-            console.warn('onBackgroundColorChange is not a function.');
-        }
+        emit('onBackgroundColorChange', { backgroundColor, color });
+        
     }, { immediate: true });
 </script>
 

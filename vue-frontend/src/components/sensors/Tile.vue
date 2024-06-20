@@ -2,8 +2,9 @@
     import { ref } from 'vue';
     import ReadingValue from './ReadingValue.vue';
     import BatteryIcon from '../shared/BatteryIcon.vue';
-    
-    const expanded = false;//useTileMode();
+    import { useTileModeStore } from '../../stores/tileModeStore';
+
+    const { expanded } = useTileModeStore();
     const props = defineProps({
         data: Object
     });

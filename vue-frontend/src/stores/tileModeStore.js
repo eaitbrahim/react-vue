@@ -6,6 +6,7 @@ export const useTileModeStore = defineStore('tileMode', () => {
 
     const toggleMode = () => {
         expanded.value = !expanded.value;
+        console.log('toggleMode:', expanded.value);
     };
 
     return {
