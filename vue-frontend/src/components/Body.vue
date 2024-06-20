@@ -5,6 +5,7 @@ import SlideMenu from './menu/SlideMenu.vue';
 <template>
     <div class="container">
         <SlideMenu />
+        <router-view />
     </div>
 </template>
   

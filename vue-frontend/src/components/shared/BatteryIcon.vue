@@ -1,36 +1,55 @@
+<script setup>
+    import { ref, computed } from 'vue';
+    import { FaBatteryFull, FaBatteryHalf, FaBatteryEmpty } from 'vue3-icons/fa';
+
+    const props = defineProps({
+        level: {
+            type: Number,
+            required: true
+        }
+    });
+
+    let Icon;
+    let percentageColor;
+
+    if (props.level >= 75) {
+        Icon = FaBatteryFull;
+        percentageColor = 'green';
+    } else if (props.level >= 50) {
+        Icon = FaBatteryHalf;
+        percentageColor = 'darkOrange';
+    } else {
+        Icon = FaBatteryEmpty;
+        percentageColor = 'red';
+    }
+
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
+    <div class="BatteryIcon">
+        <component :is="Icon" class="icon" :style="{ color: percentageColor }" />
+        <span class="Percentage">{{ level }}%</span>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String,
-    },
-  };
-  </script>
+<style scoped>
+    .BatteryIcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .icon {
+        font-size: 36px;
+        margin: auto; 
+        transform: rotate(-90deg);
+    };
   
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-  .home {
-    text-align: center;
-  }
-  
-  .robot {
-    height: 500px;
-  }
-  
-  .get-started {
-    padding-top: 20px;
-    font-size: 32px;
-  }
-  </style>
+    .Percentage {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+</style>
   
