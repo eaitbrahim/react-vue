@@ -1,8 +1,8 @@
 <script setup>
+    import { computed } from 'vue';
     import { useRoute } from 'vue-router';
     const route = useRoute();
-    //const title = route.path.includes('/sensor/') ? 'Sensor Detail' : 'All Sensors';
-    const title = 'All Sensors';
+    const title = computed(() => route.name);
 </script>
 
 <template>
