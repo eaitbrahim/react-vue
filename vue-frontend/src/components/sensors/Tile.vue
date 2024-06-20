@@ -1,36 +1,34 @@
+<script setup>
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String,
-    },
-  };
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-  .home {
-    text-align: center;
+   
+</template>
+
+<style scoped>
+.Tile {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    color:rgb(255, 255, 255);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px; 
+
+    h2 {
+      font-weight: bold;
+    }
   }
-  
-  .robot {
-    height: 500px;
+
+  .Tile:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); 
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+    cursor: pointer;
   }
-  
-  .get-started {
-    padding-top: 20px;
-    font-size: 32px;
+
+  .link {
+    text-decoration: none; 
+    color: inherit; 
   }
-  </style>
+</style>
   
