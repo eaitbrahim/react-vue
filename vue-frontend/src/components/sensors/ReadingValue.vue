@@ -18,7 +18,7 @@
         } else if (newValue === '#') {
             displayValue.value = 'Probe missing';
         } else {
-            displayValue.value = `${newValue.toFixed(2)}° F`;
+            displayValue.value = `${+newValue.toFixed(2)}° F`;
         }
 
         // Calculate backgroundColor and color

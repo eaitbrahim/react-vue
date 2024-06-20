@@ -12,7 +12,7 @@
     const backgroundColor = ref('#8cd98c');
     const color = ref('#ffffff');
 
-    const handleBackgroundColorChange = (bgColor, textColor) => {
+    const handleBackgroundColorChange = ({ backgroundColor: bgColor, color: textColor }) => {
         backgroundColor.value = bgColor;
         color.value = textColor;
     };
