@@ -9,20 +9,25 @@ const props = defineProps({
   totalPages: {
     type: Number,
     required: true
-  },
-  onPrevPage: Function,
-  onNextPage: Function,
-  isNextDisabled: Boolean
+  }
 });
 
+const emit = defineEmits(['onPrevPage', 'onNextPage']);
+
+const emitPrevPage = () => {
+    emit('onPrevPage');
+};
+const emitNextPage = () => {
+    emit('onNextPage');
+}
 </script>
 
 <template>
     <div class="PaginationButtons">
-      <button @click="onPrevPage" :disabled="currentPage === 1" class="PaginationButton">
+      <button @click="emitPrevPage" :disabled="currentPage === 1" class="PaginationButton">
         Prev
       </button>
-      <button @click="onNextPage" :disabled="isNextDisabled" class="PaginationButton">
+      <button @click="emitNextPage"  class="PaginationButton">
         Next
       </button>
     </div>    

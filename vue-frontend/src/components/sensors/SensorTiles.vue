@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, reactive, onMounted, onUnmounted, computed } from 'vue';
+    import { ref, onMounted, onUnmounted, computed } from 'vue';
     import axios from 'axios';
     import Tile from './Tile.vue';
     import PaginationButtons from '../shared/PaginationButtons.vue';
@@ -13,14 +13,14 @@
 
     const styleExpanded = { gridTemplateColumns: 'repeat(4, 1fr)' };
     const styleCollapsed = { gridTemplateColumns: 'repeat(10, 1fr)' };
-    const gridStyle = computed(() => (expanded.value ? styleExpanded : styleCollapsed))
+    const gridStyle = computed(() => (expanded ? styleExpanded : styleCollapsed))
 
     const fetchData = async () => {
         try {
             loading.value = true;
             const response = await axios.get(`http://localhost:3000/sensor?page=${currentPage.value}`);
             sensorData.value = response.data;
-            totalPages.value = parseInt(response.headers['x-total-pages'], 10);
+            totalPages.value = 25;//parseInt(response.headers['x-total-pages'], 10);
             loading.value = false;
         } catch (error) {
             console.error('Error fetching sensor data:', error);

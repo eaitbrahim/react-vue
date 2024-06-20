@@ -1,6 +1,12 @@
 <script setup>
     import { useTileModeStore } from '../../stores/tileModeStore';
     const { expanded, toggleMode } = useTileModeStore();
+
+    const toggleModeWithLog = (event) => {
+        console.log('Checkbox checked:', event.target.checked);
+        toggleMode();
+        console.log('TileMode toggled:', expanded);
+    };
 </script>
 
 <template>
@@ -9,7 +15,7 @@
           <input
             type="checkbox"
             :checked="expanded"
-            @change="toggleMode"
+            @change="toggleModeWithLog"
             class="checkbox"
           />
           <span class="slider"></span>
