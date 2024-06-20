@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, reactive, onMounted, onUnmounted, watchEffect } from 'vue';
+    import { ref, reactive, onMounted, onUnmounted } from 'vue';
     import axios from 'axios';
     import Tile from './Tile.vue';
     import PaginationButtons from '../shared/PaginationButtons.vue';
@@ -36,7 +36,8 @@
 
     const ws = new WebSocket('ws://localhost:8080');
 
-    onMounted(() => {
+    onMounted(async () => {
+        await fetchData();
         ws.onmessage = (event) => {
             const newData = JSON.parse(event.data);
             updateSensorData(newData);
@@ -53,10 +54,7 @@
             sensorData.value[index] = { ...sensorData.value[index], ...newData };
         }
     };
-
-    watchEffect(() => {
-        fetchData();
-    });
+    
 </script>
 
 <template>
