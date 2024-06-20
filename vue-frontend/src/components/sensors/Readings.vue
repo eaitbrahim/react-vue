@@ -1,36 +1,33 @@
+<script setup>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faTools } from '@fortawesome/free-solid-svg-icons';
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
+    <div class="Sensor">
+        <div class="icon">
+            <font-awesome-icon :icon="['fas', 'tools']" size="6x" />
+        </div>
+        <div class="message">
+            Readings Under Construction
+        </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String,
-    },
-  };
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-  .home {
-    text-align: center;
+</template>
+
+<style scoped>
+.Sensor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .robot {
-    height: 500px;
+  .icon {
+    margin-bottom: 20px;
   }
   
-  .get-started {
-    padding-top: 20px;
-    font-size: 32px;
+  .message {
+    font-size: 24px;
+    font-weight: bold;
   }
-  </style>
+</style>
   

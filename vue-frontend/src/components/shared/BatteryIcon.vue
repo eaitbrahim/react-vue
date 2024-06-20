@@ -1,6 +1,6 @@
 <script setup>
     import { ref, computed } from 'vue';
-    import { FaBatteryFull, FaBatteryHalf, FaBatteryEmpty } from 'vue3-icons/fa';
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
     const props = defineProps({
         level: {
@@ -13,13 +13,13 @@
     let percentageColor;
 
     if (props.level >= 75) {
-        Icon = FaBatteryFull;
+        Icon = ['fas', 'battery-full'];
         percentageColor = 'green';
     } else if (props.level >= 50) {
-        Icon = FaBatteryHalf;
+        Icon = ['fas', 'battery-half'];
         percentageColor = 'darkOrange';
     } else {
-        Icon = FaBatteryEmpty;
+        Icon = ['fas', 'battery-empty'];
         percentageColor = 'red';
     }
 

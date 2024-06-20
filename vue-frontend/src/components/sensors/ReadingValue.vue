@@ -1,36 +1,36 @@
+<script setup>
+    import { ref } from 'vue';
+    const { value, min, max, onBackgroundColorChange } = props;
+    let backgroundColor, color;
+    if (value.value < min.value) {
+        backgroundColor = '#3899ff'; // blue
+        color = '#ffffff';
+    } else if (value.value > max.value) {
+        backgroundColor = '#990200'; // red
+        color = '#ffffff';
+    } else if (value.value === '#') {
+        backgroundColor = '#f8a736'; // orange
+        color = '#000000';
+    } else {
+        backgroundColor = '#8cd98c'; // green
+        color = '#000000';
+    }
+
+    onBackgroundColorChange(backgroundColor, color);
+
+    const displayValue = ref(value.value === undefined ? '' : (value.value === '#' ? 'Probe missing' : `${value.value.toFixed(2)}° F`));
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
-    </div>
-  </template>
+     <span class="RreadingValue">{{ displayValue }}</span>
+</template>
   
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String,
-    },
-  };
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-  .home {
-    text-align: center;
-  }
-  
-  .robot {
-    height: 500px;
-  }
-  
-  .get-started {
-    padding-top: 20px;
-    font-size: 32px;
-  }
-  </style>
+<style scoped>
+    .ReadingValue {
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: x-large;
+    }
+</style>
   

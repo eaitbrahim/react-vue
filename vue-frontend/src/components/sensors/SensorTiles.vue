@@ -37,10 +37,10 @@
     const ws = new WebSocket('ws://localhost:8080');
 
     onMounted(() => {
-    ws.onmessage = (event) => {
-        const newData = JSON.parse(event.data);
-        updateSensorData(newData);
-    };
+        ws.onmessage = (event) => {
+            const newData = JSON.parse(event.data);
+            updateSensorData(newData);
+        };
     });
 
     onUnmounted(() => {

@@ -1,8 +1,44 @@
 <script setup>
+    import { ref } from 'vue';
+    import ReadingValue from './ReadingValue.vue';
+    import BatteryIcon from '../shared/BatteryIcon.vue';
+    
+    const { expanded } = true;//useTileMode();
+    const data = ref(props.data);
+    const backgroundColor = ref('#8cd98c');
+    const color = ref('#ffffff');
+
+    const handleBackgroundColorChange = (bgColor, textColor) => {
+        backgroundColor.value = bgColor;
+        color.value = textColor;
+    };
 </script>
 
 <template>
-   
+    <div class="tile" :style="{ backgroundColor, color }">
+        <router-link :to="`/sensor/${data.SensorId}`" class="link">
+            <h2>{{ data.SensorName }}</h2>
+            <ReadingValue
+                :value="data.reading"
+                :min="data.AlarmRange.min"
+                :max="data.AlarmRange.max"
+                @onBackgroundColorChange="handleBackgroundColorChange"
+            />
+            <template v-if="expanded">
+                <p>{{ data.SensorType }}</p>
+                <ReadingValue
+                    :value="data.reading"
+                    :min="data.AlarmRange.min"
+                    :max="data.AlarmRange.max"
+                    @onBackgroundColorChange="handleBackgroundColorChange"
+                />
+                <p>Alarm Range: {{ data.AlarmRange.min }} °F to {{ data.AlarmRange.max }} °F</p>
+                <p>Reading: {{ new Date(data.readingDateTime).toString() }}</p>
+                <p>Sensor ID: {{ data.SensorId }} / {{ data.Probe }}</p>
+                <BatteryIcon :level="data.batteryLevel" />
+            </template>
+        </router-link>
+    </div>
 </template>
 
 <style scoped>
