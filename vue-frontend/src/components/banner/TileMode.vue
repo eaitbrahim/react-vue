@@ -1,13 +1,22 @@
+<script setup>
+    import { useTileModeStore } from '../../stores/tileModeStore';
+    const { expanded, toggleMode } = useTileModeStore();
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
-    </div>
-  </template>
+    <div class="tileMode">
+        <label class="switch">
+          <input
+            type="checkbox"
+            :checked="expanded"
+            @change="toggleMode"
+            class="checkbox"
+          />
+          <span class="slider"></span>
+          <span class="label">{{ expanded ? 'Collapse' : 'Expand' }}</span>
+        </label>
+    </div>    
+</template>
   
 <style scoped>
 .tileMode {

@@ -1,24 +1,49 @@
 <script setup>
-    import { ref } from 'vue';
-    const { value, min, max, onBackgroundColorChange } = props;
-    let backgroundColor, color;
-    if (value.value < min.value) {
-        backgroundColor = '#3899ff'; // blue
-        color = '#ffffff';
-    } else if (value.value > max.value) {
-        backgroundColor = '#990200'; // red
-        color = '#ffffff';
-    } else if (value.value === '#') {
-        backgroundColor = '#f8a736'; // orange
-        color = '#000000';
-    } else {
-        backgroundColor = '#8cd98c'; // green
-        color = '#000000';
-    }
+    import { ref, watch } from 'vue';
 
-    onBackgroundColorChange(backgroundColor, color);
+    const props = defineProps({
+    value: Object,
+    min: Number,
+    max: Number,
+    onBackgroundColorChange: Function
+    });
 
-    const displayValue = ref(value.value === undefined ? '' : (value.value === '#' ? 'Probe missing' : `${value.value.toFixed(2)}° F`));
+    // Reactive variables
+    const displayValue = ref('');
+
+    // Watch props.value for changes
+    watch(() => props.value, (newValue) => {
+        if (newValue === undefined) {
+            displayValue.value = '';
+        } else if (newValue === '#') {
+            displayValue.value = 'Probe missing';
+        } else {
+            displayValue.value = `${newValue.toFixed(2)}° F`;
+        }
+
+        // Calculate backgroundColor and color
+        let backgroundColor, color;
+        if (newValue < props.min) {
+            backgroundColor = '#3899ff'; // blue
+            color = '#ffffff';
+        } else if (newValue > props.max) {
+            backgroundColor = '#990200'; // red
+            color = '#ffffff';
+        } else if (newValue === '#') {
+            backgroundColor = '#f8a736'; // orange
+            color = '#000000';
+        } else {
+            backgroundColor = '#8cd98c'; // green
+            color = '#000000';
+        }
+
+        // Call onBackgroundColorChange function from props
+        if (typeof props.onBackgroundColorChange === 'function') {
+          props.onBackgroundColorChange(backgroundColor, color);
+        } else {
+            console.warn('onBackgroundColorChange is not a function.');
+        }
+    }, { immediate: true });
 </script>
 
 <template>

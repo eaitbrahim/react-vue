@@ -19,11 +19,12 @@ const Tile = ({ data } ) => {
   <div className={classes.Tile} style={{ backgroundColor: backgroundColor, color }}>
     <Link to={`/sensor/${data.SensorId}`} className={classes.link}>
       <h2>{data.SensorName}</h2>
-      <ReadingValue 
+      { !expanded && (<ReadingValue 
               value={data.reading} 
               min={data.AlarmRange.min} 
               max={data.AlarmRange.max}
-              onBackgroundColorChange={handleBackgroundColorChange} />
+              onBackgroundColorChange={handleBackgroundColorChange} />)}
+              
       {expanded && (
           <>
             <p>{data.SensorType}</p>

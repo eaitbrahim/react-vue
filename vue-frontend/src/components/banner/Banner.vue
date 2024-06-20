@@ -9,7 +9,7 @@ import Logout from './Logout.vue';
     <div class="banner">
         <Title />
         <div class="actions">
-            <!--<TileMode />-->
+            <TileMode />
             <Search />
             <Logout />
         </div>

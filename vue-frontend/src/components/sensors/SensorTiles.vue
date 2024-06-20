@@ -4,14 +4,14 @@
     import Tile from './Tile.vue';
     import PaginationButtons from '../shared/PaginationButtons.vue';
     
-    const { expanded } = true;//useTileMode();
+    const  expanded  = true;//useTileMode();
     const sensorData = ref([]);
     const currentPage = ref(1);
     const totalPages = ref(1);
     const loading = ref(true);
 
-    const styleExpanded = { gridTemplateColumns: 'repeat(4, 1fr)' };
-    const styleCollapsed = { gridTemplateColumns: 'repeat(10, 1fr)' };
+    const styleExpanded = ref({ gridTemplateColumns: 'repeat(4, 1fr)' });
+    const styleCollapsed = ref({ gridTemplateColumns: 'repeat(10, 1fr)' });
 
     const fetchData = async () => {
         try {
@@ -54,11 +54,11 @@
             sensorData.value[index] = { ...sensorData.value[index], ...newData };
         }
     };
-    
+
 </script>
 
 <template>
-    <div class="sensorTiles" :style="[expanded ? styleExpanded : styleCollapsed]">
+    <div class="sensorTiles" :style="[expanded ? styleExpanded.value : styleCollapsed.value]">
         <template v-if="loading">
             <div>Loading...</div>
         </template>

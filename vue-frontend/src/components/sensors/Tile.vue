@@ -3,7 +3,10 @@
     import ReadingValue from './ReadingValue.vue';
     import BatteryIcon from '../shared/BatteryIcon.vue';
     
-    const { expanded } = true;//useTileMode();
+    const expanded = false;//useTileMode();
+    const props = defineProps({
+        data: Object
+    });
     const data = ref(props.data);
     const backgroundColor = ref('#8cd98c');
     const color = ref('#ffffff');
@@ -18,7 +21,7 @@
     <div class="tile" :style="{ backgroundColor, color }">
         <router-link :to="`/sensor/${data.SensorId}`" class="link">
             <h2>{{ data.SensorName }}</h2>
-            <ReadingValue
+            <ReadingValue v-if="!expanded"
                 :value="data.reading"
                 :min="data.AlarmRange.min"
                 :max="data.AlarmRange.max"
