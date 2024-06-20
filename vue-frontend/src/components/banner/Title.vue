@@ -1,36 +1,20 @@
+<script setup>
+    import { useRoute } from 'vue-router';
+    const route = useRoute();
+    //const title = route.path.includes('/sensor/') ? 'Sensor Detail' : 'All Sensors';
+    const title = 'All Sensors';
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
-    </div>
-  </template>
+    <div class="title">
+    <span>{{ title }}</span>
+  </div>
+</template>
   
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String,
-    },
-  };
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-  .home {
-    text-align: center;
+<style scoped>
+.title {
+    font-weight: bold;
+    color: white;
   }
-  
-  .robot {
-    height: 500px;
-  }
-  
-  .get-started {
-    padding-top: 20px;
-    font-size: 32px;
-  }
-  </style>
+</style>
   

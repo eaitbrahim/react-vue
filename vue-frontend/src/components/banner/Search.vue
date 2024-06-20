@@ -1,36 +1,33 @@
+<script setup>
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+    import { faSearch } from '@fortawesome/free-solid-svg-icons';
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
+    <div class="search">
+        <input type="text" placeholder="Search..." class="input" />
+        <font-awesome-icon :icon="['fas', 'search']" class="icon" />
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String,
-    },
-  };
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
-  .home {
-    text-align: center;
+<style scoped>
+.search {
+    position: relative;
   }
   
-  .robot {
-    height: 500px;
+  .input {
+    padding: 5px 30px 5px 10px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
   }
   
-  .get-started {
-    padding-top: 20px;
-    font-size: 32px;
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    cursor: pointer;
   }
-  </style>
+</style>
   

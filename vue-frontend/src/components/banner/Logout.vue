@@ -1,36 +1,40 @@
+<script setup>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+</script>
+
 <template>
-    <div class="home">
-      <div>
-        <img class="robot" src="../assets/robot-home.png" aria-hidden="true" alt="Robot" />
-      </div>
-      <div class="get-started">
-        <router-link to="/build">Get started</router-link> building your first robot!
-      </div>
+     <div class="logout">
+        <button class="button">
+        <font-awesome-icon :icon="['fas', 'sign-out-alt']" class="icon" />
+        Logout
+        </button>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String,
-    },
-  };
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
-  .home {
-    text-align: center;
+.logout {
+    margin-left: 10px; 
   }
   
-  .robot {
-    height: 500px;
+  .button {
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
   }
   
-  .get-started {
-    padding-top: 20px;
-    font-size: 32px;
+  .button:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .icon {
+    margin-right: 5px; 
+    color: green;
   }
   </style>
   
