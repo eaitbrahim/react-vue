@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import classes from './App.module.scss';
 import Header from './components/header/Header';
 import Banner from './components/banner/Banner';
-import Main from './components/Main';
+import Body from './components/Body';
 import { TileModeProvider } from './context/TileModeContext';
 
 const App = () => (
@@ -12,7 +12,7 @@ const App = () => (
           <div className={classes.app}>
             <Header />
             <Banner />
-            <Main/>
+            <Body/>
           </div>
       </TileModeProvider>
     </Router>

@@ -1,12 +1,13 @@
 <script setup>
-import Header from './components/header/Header.vue';
+import Header from './components/header/Header.vue'
+import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
   <div className={classes.app}>
     <Header />
-    <!-- <Banner />
-    <Main/> -->
+    <Banner />
+    <Main/>
   </div>
 </template>
 

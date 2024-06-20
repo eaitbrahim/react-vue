@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import SlideMenu from './menu/SlideMenu';
 import SensorTiles from './sensors/SensorTiles';
 import SensorDetail from './sensors/SensorDetail';
-import styles from './Main.module.scss';
+import styles from './Body.module.scss';
 
-function Main() {
+function Body() {
   return (
     <div className={styles.container}>
         <SlideMenu />
@@ -17,4 +17,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Body;
