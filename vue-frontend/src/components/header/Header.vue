@@ -1,23 +1,25 @@
 <script setup>
 import Alarms from './messages/Alarms.vue';
 import Site from './Site.vue';
-// import Information from './components/messages/Information.vue'
-// import SignedIn from './components/messages/SignedIn.vue'
+import Information from './messages/Information.vue'
+import SignedIn from './messages/SignedIn.vue'
 </script>
 
 <template>
   <header class="header">
         <div class="logoAndAlarms">
             <div class="logo">
-                <router-link to="/">Vue</router-link>
+                <router-link to="/">
+                    <img class="logo" src="../../assets/logo.svg" alt="logo" />
+                    Vue
+                </router-link>
             </div>
             <Alarms />
         </div>
-        <div class={rightSection}>
-            <Site />
-            <!-- 
+        <div class="rightSection">
+            <Site />            
             <Information />
-            <SignedIn /> -->
+            <SignedIn />
         </div>
     </header>
 </template>

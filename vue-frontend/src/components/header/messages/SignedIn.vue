@@ -1,18 +1,13 @@
-<script setup>
-import Header from './components/header/Header.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <div className={classes.app}>
-    <Header />
-    <Banner />
-    <Main/>
-  </div>
+  <div class="signedIn">
+      Logged in as: Mehdi Aitbrahim
+    </div>
 </template>
 
 <style scoped>
-.app {
-  background-color: white;
+.signedIn {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;;
 }
 </style>
