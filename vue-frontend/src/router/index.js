@@ -7,11 +7,11 @@ export default createRouter({
     routes: [
       {
         path: '/',
-        name: 'Sensors',
+        name: 'All Sensors',
         component: SensorTiles
       }, {
         path: '/sensor/:id',
-        name: 'SensorDetail',
+        name: 'Sensor Detail',
         component: SensorDetail
       },
     ],
