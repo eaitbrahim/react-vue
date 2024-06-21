@@ -1,10 +1,12 @@
 <script setup>
     import { ref } from 'vue';
+    import { storeToRefs } from 'pinia';
     import ReadingValue from './ReadingValue.vue';
     import BatteryIcon from '../shared/BatteryIcon.vue';
     import { useTileModeStore } from '../../stores/tileModeStore';
 
-    const { expanded } = useTileModeStore();
+    const  store  = useTileModeStore();
+    const { expanded } = storeToRefs(store);
     const props = defineProps({
         data: Object
     });

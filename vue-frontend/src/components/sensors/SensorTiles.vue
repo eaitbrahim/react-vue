@@ -1,19 +1,17 @@
 <script setup>
     import { ref, onMounted, onUnmounted, computed } from 'vue';
     import axios from 'axios';
+    import { storeToRefs } from 'pinia';
     import Tile from './Tile.vue';
     import PaginationButtons from '../shared/PaginationButtons.vue';
     import { useTileModeStore } from '../../stores/tileModeStore';
     
-    const  { expanded }  = useTileModeStore();
+    const  store  = useTileModeStore();
+    const { expanded } = storeToRefs(store);
     const sensorData = ref([]);
     const currentPage = ref(1);
     const totalPages = ref(1);
     const loading = ref(true);
-
-    const styleExpanded = { gridTemplateColumns: 'repeat(4, 1fr)' };
-    const styleCollapsed = { gridTemplateColumns: 'repeat(10, 1fr)' };
-    const gridStyle = computed(() => (expanded ? styleExpanded : styleCollapsed))
 
     const fetchData = async () => {
         try {
@@ -68,11 +66,12 @@
 </script>
 
 <template>
-    <div class="SensorTiles" :style="gridStyle">
+    <div class="SensorTiles" :style="expanded ? { gridTemplateColumns: 'repeat(4, 1fr)' } : { gridTemplateColumns: 'repeat(10, 1fr)' }">
         <template v-if="loading">
             <div>Loading...</div>
         </template>
         <template v-else>
+            <p>{{ expanded }}</p>
         <template v-for="(data, index) in sensorData" :key="index">
             <Tile :data="data" />
         </template>
